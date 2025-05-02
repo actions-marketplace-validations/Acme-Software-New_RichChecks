@@ -36,6 +36,7 @@ runs:
           name: "${{ inputs.name || github.event.repository.name }}",
           head_sha: process.env.GITHUB_SHA,
           status: "${{ inputs.status }}",
+          conclusion: "${{ inputs.status }}",
           output: {
             title: "${{ inputs.title }}",
             summary: "${{ inputs.summary }}",
