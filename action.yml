@@ -7,6 +7,9 @@ inputs:
   status:
     description: 'the status of the check `queued`, `in_progress` or `completed`'
     required: true
+  conclusion:
+    description: 'The conclusion for the check'
+    required: true
   title:
     description: 'the title to put on the check panel'
     required: true
@@ -36,7 +39,7 @@ runs:
           name: "${{ inputs.name || github.event.repository.name }}",
           head_sha: process.env.GITHUB_SHA,
           status: "${{ inputs.status }}",
-          conclusion: "${{ inputs.status }}",
+          conclusion: "${{ inputs.conclusion }}",
           output: {
             title: "${{ inputs.title }}",
             summary: "${{ inputs.summary }}",
