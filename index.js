@@ -171,6 +171,8 @@ async function run() {
 
     core.startGroup("validate annotations and images");
 
+    console.log('Annotations: \n', JSON.stringify(annotations, null, 2));
+
     if (core.isDebug()) {
       core.debug(annotations);
     }
